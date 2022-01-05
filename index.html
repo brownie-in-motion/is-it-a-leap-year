@@ -20,10 +20,12 @@
         </style>
         <script>
             (async() => {
-                await new Promise((res) => window.addEventListener('load', res));
                 const year = new Date().getFullYear();
-                const isLeapYear = !(year % 400) || !!(year % 100) && !(year % 4);
-                document.querySelector('h1').innerText = isLeapYear ? 'Yes.' : 'No.';
+                const [ response ] = await Promise.all([
+                    fetch(`/api?year=${year}`),
+                    new Promise((res) => window.addEventListener('load', res)),
+                ])
+                console.log(response);
             })();
         </script>
     </head>

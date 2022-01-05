@@ -1,0 +1,35 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Is it a Leap Year?</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                font-family: sans-serif;
+            }
+            .container {
+                height: 100%;
+                display: grid;
+                place-items: center;
+
+                background-color: black;
+                color: white;
+            }
+        </style>
+        <script>
+            (async() => {
+                await new Promise((res) => window.addEventListener('load', res));
+                const year = new Date().getFullYear();
+                const isLeapYear = !(year % 400) || !!(year % 100) && !(year % 4);
+                document.querySelector('h1').innerText = isLeapYear ? 'Yes.' : 'No.';
+            })();
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1></h1>
+        </div>
+    </body>
+</html>

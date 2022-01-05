@@ -17,6 +17,9 @@
                 background-color: black;
                 color: white;
             }
+            h1 : first-letter {
+                text-transform: capitalize;
+            }
         </style>
         <script>
             (async() => {
@@ -24,8 +27,9 @@
                 const [ response ] = await Promise.all([
                     fetch(`/api?year=${year}`),
                     new Promise((res) => window.addEventListener('load', res)),
-                ])
-                console.log(response);
+                ]);
+                const { result } = await response.json();
+                document.querySelector('h1').innerText = result;
             })();
         </script>
     </head>

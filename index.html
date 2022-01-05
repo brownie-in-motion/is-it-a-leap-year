@@ -26,7 +26,7 @@
                     new Promise((res) => window.addEventListener('load', res)),
                 ]);
                 const { result } = await response.json();
-                document.querySelector('h1').innerText = result;
+                document.querySelector('h1').innerText = result ? 'Yes.' : 'No.'
             })();
         </script>
     </head>

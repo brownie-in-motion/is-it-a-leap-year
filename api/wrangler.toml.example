@@ -1,0 +1,7 @@
+name = "[name]"
+compatibility_date = "2022-01-05"
+type = "javascript"
+
+account_id = "[account_id]"
+zone_id = "[zone_id]"
+route = "[origin]/api*"

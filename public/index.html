@@ -9,13 +9,22 @@
                 height: 100%;
                 font-family: sans-serif;
             }
+
             .container {
                 height: 100%;
                 display: grid;
-                place-items: center;
-
                 background-color: #664400;
                 color: white;
+                grid-template-rows: 1fr auto;
+            }
+
+            .main {
+                display: grid;
+                place-items: center;
+            }
+
+            .footer {
+                margin: 1rem;
             }
         </style>
         <script>
@@ -32,7 +41,12 @@
     </head>
     <body>
         <div class="container">
-            <h1></h1>
+            <div class="main">
+                <h1></h1>
+            </div>
+            <div class="footer">
+                <a href="https://github.com/brownie-in-motion/is-it-a-leap-year">GitHub and API Docs</a>
+            </div>
         </div>
     </body>
 </html>
